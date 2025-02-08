@@ -1,6 +1,7 @@
 {setserver:{image}|a}
+delivery for {nick}.
 {iscript:
-load {iv:{args}} i
+load {iv} i
 get i width w
 get i height h
 invert i
@@ -14,14 +15,14 @@ copy i i2
 copy i i3
 copy i i4
 audiopitch i 2
-audiopitch i3 0.{range:5
-audiopitch i4 0.25
+audiopitch i3 0.{range:5|99}
+audiopitch i4 0.{range:25|99}
 overlay i i2
 volume i 2
 overlay i i3
 volume i 2
 overlay i i4
-audiopitch i 1.059
+audiopitch i {choose:1|2}.{range:10|99}
 volume i 2
 render i
 }
