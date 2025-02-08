@@ -1,0 +1,27 @@
+{setserver:{image}|a}
+{iscript:
+load {iv:{args}} i
+get i width w
+get i height h
+invert i
+load {getserver:a|https://researchandideas.com/images/3/36/Sprint-logo.jpg} dma
+distort dma resize w h
+opacity dma 50
+overlay i dma
+huecurvergba i all 1 0 1
+huecurvergba i all 0 0.6 1
+copy i i2
+copy i i3
+copy i i4
+audiopitch i 2
+audiopitch i3 0.{range:5
+audiopitch i4 0.25
+overlay i i2
+volume i 2
+overlay i i3
+volume i 2
+overlay i i4
+audiopitch i 1.059
+volume i 2
+render i
+}
